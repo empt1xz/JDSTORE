@@ -1,0 +1,73 @@
+:root {
+    --cor: #9052FE;
+    --cor2: #131212;
+}
+
+@font-face {
+    font-family: JDSTORE;
+    src: url(DK\ Full\ Blast.otf);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: var(--cor);
+}
+
+div.circle {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 285px;
+    height: 285px;
+}
+
+div.circle::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border-right: 2px solid var(--cor);
+    box-sizing: border-box;
+    animation: rotateBorder 5s linear infinite;
+}
+
+.image-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background-color: var(--cor2); /* Para garantir que o conteúdo esteja dentro do círculo */
+}
+
+body {
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: var(--cor2);
+    font-family: 'JDSTORE';
+}
+
+h1 {
+    letter-spacing: 4px;
+    text-shadow: 0px 0px 2px #9052FE;
+}
+
+@keyframes rotateBorder {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
